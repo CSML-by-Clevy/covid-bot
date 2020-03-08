@@ -1,0 +1,31 @@
+start:
+	say Typing(3000)
+	say "Si vous vous trouvez ou vous êtes rendu au cours des 14 derniers jours dans une région où le COVID-19 se propage, soyez particulièrement attentif•ve aux consignes ci-dessous :"
+	say Button("Mesures de protection") as mesures
+	say Button("Je présente des symptômes") as symptomes
+	hold
+
+	if (event match mesures) goto flow bonnesPratiques
+
+	say Typing(3000)
+	say "Si vous commencez à vous sentir mal, même si vous n’avez que des symptômes bénins comme des maux de tête et un faible écoulement nasal, restez chez vous jusqu’à la guérison."
+	say "**Pourquoi ?** Éviter d’entrer en contact avec d’autres personnes et de se rendre dans des établissements de santé permettra à ces établissements de fonctionner plus efficacement et vous protègera, ainsi que les autres personnes, de la COVID-19 et d’autres maladies virales."
+	say Typing(3000)
+	say "En cas de fièvre, de toux et de difficultés respiratoires, consultez un médecin sans tarder, car il peut s’agir d’une infection respiratoire ou d’une autre affection grave. Appelez votre médecin et indiquez-lui si vous avez récemment voyagé ou été en contact avec des voyageurs."
+	say "Pourquoi ? Si vous l’appelez, votre médecin pourra vous orienter rapidement vers l’établissement de santé le plus adapté. En outre, cela vous protègera et évitera la propagation de la COVID-19 et d’autres maladies virales."
+	say Typing(3000)
+	say "Pour rappel, le numéro du SAMU est le 15. L'Etat Français a également mis en place un numéro vert : 0800 130 000."
+	say Url("https://www.service-public.fr/particuliers/actualites/A13894", text="Service-public.fr - Plateforme téléphonique Coronavirus")
+
+	say Typing(2000)
+	say Question(
+		"Dans tous les cas, pour votre santé et celle des autres, pensez à respecter les bonnes pratiques de protection !",
+		buttons=[
+			Button("Mesures de protection") as mesures,
+			Button("Revenir au menu")
+		]
+	)
+	hold
+
+	if (event match mesures) goto flow bonnesPratiques
+	goto flow choices

@@ -1,0 +1,23 @@
+start:
+	say Question(
+		"Quel type d'informations aimeriez-vous recevoir ?",
+		buttons=[
+			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "1"]) as ideesbtn,
+			Button("Quand et comment utiliser un masque ?", accept=["masque", "2"]) as masquebtn,
+			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "3"]) as pratiquesbtn,
+			Button("Les questions fréquentes", accept=["questions", "faq", "4"]) as questionsbtn
+		])
+	hold
+
+	if (event match ideesbtn) goto flow ideesRecues
+	if (event match masquebtn) goto flow masque
+	if (event match questionsbtn)	goto flow faq
+	if (event match pratiquesbtn) goto flow bonnesPratiques
+
+	say "Je suis désolé, je n'ai pas compris votre choix..."
+	say OneOf([
+		"Vous devez cliquer sur un des boutons !",
+		"Pouvez-vous utiliser les boutons s'il vous plait ?"
+	])
+	
+	goto start

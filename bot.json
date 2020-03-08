@@ -1,0 +1,54 @@
+{
+  "id": "1803d16e-d6d7-46cc-9294-c64488eb97a6",
+  "name": "CoronaVirus",
+  "description": null,
+  "default_flow": "Default",
+  "tags": [],
+  "flows": [
+    {
+      "name": "bonnesPratiques",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "choices",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "Default",
+      "description": "Default custom flow",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "faq",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "ideesRecues",
+      "description": null,
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "masque",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "symptomes",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "welcome",
+      "commands": [],
+      "tags": []
+    }
+  ],
+  "files": [],
+  "functions": [],
+  "apps": []
+}
