@@ -2,6 +2,8 @@
 
 Bot d'information sur le coronavirus réalisé avec le langage open-source CSML - https://www.csml.dev.
 
+Visitez https://covid19.clevy.io pour l'essayer !
+
 ## Installation
 
 - Allez sur le site https://studio.csml.dev/auth/register et créez un compte (ou identifiez-vous).
