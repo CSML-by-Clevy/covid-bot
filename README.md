@@ -2,7 +2,8 @@
 
 Bot d'information sur le coronavirus réalisé avec le langage open-source CSML - https://www.csml.dev.
 
-Visitez https://covid19.clevy.io pour l'essayer !
+Visitez https://covid19.clevy.io pour l'essayer !  
+Version Facebook Messenger et Workplace Chat sur https://www.messenger.com/t/covid19infofrance (code source: https://github.com/CSML-by-Clevy/covid-bot-messenger)
 
 ## Installation
 
