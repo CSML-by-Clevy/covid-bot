@@ -26,13 +26,15 @@ masque:
 		say "Appliquer le masque de façon à recouvrir le nez et la bouche et veillez à l’ajuster au mieux sur votre visage"
 		say Typing(2000)
 		say "Lorsque l’on porte un masque, éviter de le toucher; chaque fois que l’on touche un masque usagé, se laver les mains à l’aide d’une solution hydroalcoolique ou à l’eau et au savon "
-		say Typing(2000)
+		say Typing(3000)
 		say "Lorsqu’il s’humidifie, le remplacer par un nouveau masque et ne pas réutiliser des masques à usage unique"
-		say Typing(2000)
+		say Typing(3000)
 		say "Pour retirer le masque:  
 		 - l’enlever par derrière (ne pas toucher le devant du masque); 
 		 - le jeter immédiatement dans une poubelle fermée;
 		 - se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon"
+		say Typing(4000)
+		say Video("https://www.youtube.com/watch?v=KuT1KNfJIjc")
 		say Typing(2000)
 		say "Source :"
 		say Url("https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks", text="Organisation Mondiale de la Santé - Quand et comment utiliser un masque ?")

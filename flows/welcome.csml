@@ -1,18 +1,24 @@
 start:
 	say Typing(2000)
-	say "Hello, je suis Covid-Bot 🤖.
-	Je suis là pour répondre à vos questions concernant le COVID-19 (nouveau coronavirus)."
+	say "Hello, je suis CovidBot 🤖."
+	say "Je suis là pour répondre à vos questions concernant le COVID-19 (nouveau coronavirus)."
 	say Typing(4000)
 	say "🚨 **Attention !** 🚨
-	Je recense les bonnes pratiques données par les autorités et fournis des informations de santé publique, mais je ne remplace pas un avis médical !"
+Je recense les bonnes pratiques données par les autorités et fournis des informations de santé publique, mais je ne remplace pas un avis médical !"
 	say Typing(4000)
-	say "En cas de signes d'infections respiratoires dans les 14 jours suivant votre retour d'une zone où circule activement le virus, il faut contacter le 15 (Samu) en faisant état des symptômes et du séjour récent."
-	say Button("J'ai compris")
+	say Question(
+		"En cas de signes d'infections respiratoires dans les 14 jours suivant votre retour d'une zone où circule activement le virus, il faut contacter le 15 (Samu) en faisant état des symptômes et du séjour récent.",
+		buttons = [Button("J'ai compris")]
+	)
 	hold
+	
 	say Typing(4000)
-	say "D'autre part, sachez que les conversations avec moi sont anonymes 🙈. Je ne vous demanderai ni votre nom, ni votre email, ni aucune information personnelle."
-	say Button("OK !")
+	say Question(
+		"D'autre part, sachez que les conversations avec moi sont anonymes 🙈. Je ne vous demanderai ni votre nom, ni votre email, ni aucune information personnelle.",
+		buttons = [Button("OK !")]
+	)
 	hold
+
 	say Typing(4000)
 	say "J'ai été créé par la société [Clevy](https://www.clevy.io), spécialiste des chatbots d'information, et mon code source est disponible sur Github :"
 	say Url("https://github.com/CSML-by-Clevy/covid-bot", text="Covid Bot sur Github")

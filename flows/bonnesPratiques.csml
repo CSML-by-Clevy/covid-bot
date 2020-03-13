@@ -10,28 +10,37 @@ start:
 	say "Prenez soin de votre santé et protégez les autres en suivant ces conseils :"
 
 	say Typing(2000)
-	say "*Se laver fréquemment les mains** :
-	**Pourquoi?** Se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon tue le virus s’il est présent sur vos mains."
-	say Button("Conseil suivant")
+	say Question(
+		"**Se laver fréquemment les mains** :
+**Pourquoi?** Se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon tue le virus s’il est présent sur vos mains.",
+		buttons = [Button("Conseil suivant")],
+	)
 	hold
 
 	say Typing(2000)
-	say "**Éviter les contacts proches** :
-	Maintenir une distance d’au moins 1 mètre avec les autres personnes, en particulier si elles toussent, éternuent ou ont de la fièvre.
-	**Pourquoi?** Lorsqu’une personne infectée par un virus respiratoire, comme la COVID-19, tousse ou éternue, elle projette de petites gouttelettes contenant le virus. Si vous êtes trop près, vous pouvez inhaler le virus."
-	say Button("Conseil suivant")
+	say Question(
+		"**Éviter les contacts proches** :
+Maintenir une distance d’au moins 1 mètre avec les autres personnes, en particulier si elles toussent, éternuent ou ont de la fièvre.
+	**Pourquoi?** Lorsqu’une personne infectée par un virus respiratoire, comme la COVID-19, tousse ou éternue, elle projette de petites gouttelettes contenant le virus. Si vous êtes trop près, vous pouvez inhaler le virus.",
+		buttons = [Button("Conseil suivant")],
+	)
 	hold
 
 	say Typing(2000)
-	say "**Éviter de se toucher les yeux, le nez et la bouche** :
-	**Pourquoi?** Les mains sont en contact avec de nombreuses surfaces qui peuvent être contaminées par le virus. Si vous vous touchez les yeux, le nez ou la bouche, vous risquez d’être en contact avec le virus présent sur ces surfaces."
-	say Button("Conseil suivant")
+	say Question(
+		"**Éviter de se toucher les yeux, le nez et la bouche** :
+**Pourquoi?** Les mains sont en contact avec de nombreuses surfaces qui peuvent être contaminées par le virus. Si vous vous touchez les yeux, le nez ou la bouche, vous risquez d’être en contact avec le virus présent sur ces surfaces.",
+		buttons = [Button("Conseil suivant")],
+	)
 	hold
 
 	say Typing(2000)
-	say "**Tenez-vous informé et suivez les conseils de votre médecin** :
-	Tenez-vous au courant des dernières évolutions concernant la COVID-19. Suivez les conseils de votre médecin, des autorités de santé nationales et locales ou de votre employeur pour savoir comment vous protéger et protéger les autres de la COVID-19.
-	**Pourquoi?** Ce sont les autorités nationales et locales qui disposent des informations les plus récentes sur la propagation ou non de la COVID-19 dans la région où vous vous trouvez. Elles sont les mieux placées pour expliquer ce que les personnes dans votre région devraient faire pour se protéger."
-	say Button("Revenir au menu")
+	say Question(
+		"**Tenez-vous informé et suivez les conseils de votre médecin** :
+Tenez-vous au courant des dernières évolutions concernant la COVID-19. Suivez les conseils de votre médecin, des autorités de santé nationales et locales ou de votre employeur pour savoir comment vous protéger et protéger les autres de la COVID-19.
+**Pourquoi?** Ce sont les autorités nationales et locales qui disposent des informations les plus récentes sur la propagation ou non de la COVID-19 dans la région où vous vous trouvez. Elles sont les mieux placées pour expliquer ce que les personnes dans votre région devraient faire pour se protéger.",
+		buttons = [Button("Revenir au menu")],
+	)
 	hold
+	
 	goto flow choices

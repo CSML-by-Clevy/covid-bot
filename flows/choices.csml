@@ -2,13 +2,15 @@ start:
 	say Question(
 		"Quel type d'informations aimeriez-vous recevoir ?",
 		buttons=[
-			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "1"]) as ideesbtn,
-			Button("Quand et comment utiliser un masque ?", accept=["masque", "2"]) as masquebtn,
-			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "3"]) as pratiquesbtn,
-			Button("Les questions fréquentes", accept=["questions", "faq", "4"]) as questionsbtn
+			Button("Allocution du Président du 12 mars", accept=["macron", "discours", "le discours", "1"]) as discoursbtn,
+			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "2"]) as ideesbtn,
+			Button("Quand et comment utiliser un masque ?", accept=["masque", "3"]) as masquebtn,
+			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "4"]) as pratiquesbtn,
+			Button("Les questions fréquentes", accept=["questions", "faq", "5"]) as questionsbtn
 		])
 	hold
 
+	if (event match discoursbtn) goto flow mesures_macron_12_03_2020
 	if (event match ideesbtn) goto flow ideesRecues
 	if (event match masquebtn) goto flow masque
 	if (event match questionsbtn)	goto flow faq

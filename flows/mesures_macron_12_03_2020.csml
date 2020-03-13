@@ -1,0 +1,145 @@
+start:
+  say Typing(2000)
+	say "Face à la **plus grande crise sanitaire** depuis un siècle, voici les mesures et conseils annoncés par Emmanuel Macron lors de son discours du 12 mars 2020."
+  say Typing(2000)
+	say {
+  "meta": { "message_id":"jeprefereunestring", "sender":"bot" },
+  "content_type": "carousel",
+  "elements": [
+     {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/8fd80e6b-de81-4c8f-a88f-34711a5bfec1/election.png",
+      "title": "Élections municipales",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "election"
+        },
+      ],
+    },
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/bee7526e-b459-4455-aded-af16b1631268/edu.jpg",
+      "title": "Crèches et éducation",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "edu"
+        },
+      ],
+    },
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/784fa0e3-b1c7-4cfd-9a98-819811947655/70ans.jpg",
+      "title": "Population 70 ans et plus",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "70ans"
+        },
+      ],
+    },
+		{
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/0e1a060b-c8a0-47aa-aa6b-265693a99db9/bus.jpg",
+      "title": "Transports publics",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "transports"
+        },
+      ],
+    },
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/58dffd66-75ab-4260-b26c-33559447ccdb/bored.jpg",
+      "title": "Chômage partiel",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "chomage"
+        },
+      ],
+    },
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/a306105b-ad0c-499a-992a-47528dc84ec7/winter.jpg",
+      "title": "Trêve hivernale",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "treve"
+        },
+      ],
+    },
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/4140eea8-4825-4df6-981d-c1ee239884bc/files/344b48a9-8044-44e6-85b1-9997b35491ae/tax.jpg",
+      "title": "Cotisations entreprises",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "cotisations"
+        },
+      ],
+    },
+  ]
+}
+goto router
+
+router:
+  hold
+  if (event == "edu") {
+    say Typing(2000)
+    say "«Dès lundi, et jusqu'à nouvel ordre, les crèches, les écoles, les collèges, les lycées et les universités seront fermés», a annoncé Emmanuel Macron. Un «service de garde sera mis en place région par région», pour que les personnels soignants, «indispensables à la gestion de la crise sanitaire, puissent faire garder leurs enfants»."
+    goto router
+  } else if (event == "election") {
+    say Typing(2000)
+    say "Le président de la République a annoncé maintenir des élections municipales et intercommunales, prévues les dimanches 15 et 22 mars prochains"
+    goto router
+  } else if (event == "70ans") {
+    say Typing(2000)
+    say "Le 12 mars, Emmanuel Macron a annoncé :"
+    say Typing(2000)
+    say "«Dès lundi, et jusqu'à nouvel ordre, les crèches, les écoles, les collèges, les lycées et les universités seront fermés». Cela concerne quelque 62.000 établissements et plus de 12 millions de jeunes. Mais un «service de garde sera mis en place région par région», afin que les personnels soignants, «indispensables à la gestion de la crise sanitaire, puissent faire garder leurs enfants»."
+    say Typing(2000)
+    say "«Ils pourront bien-sûr faire leurs courses et s'aérer»"
+    goto router
+  } else if (event == "transports") {
+    say Typing(2000)
+    say "Emmanuel Macron a demandé aux français de limiter leurs déplacements «au strict nécessaire», «les transports publics seront maintenus» car «les arrêter» reviendrait à «tout bloquer, y compris la possibilité de soigner»"
+    goto router
+  } else if (event == "chomage") {
+    say Typing(2000)
+    say "Emmanuel Macron a annoncé la mise en place de mesures «exceptionnelles et massives» de chômage partiel. L'État prendra «intégralement en charge» l'indemnisation de certains salariés."
+    goto router
+  } else if (event == "treve") {
+    say Typing(2000)
+    say "Le président a annoncé le changement de la fin de la «trêve hivernale» au 31 mai, plutôt qu'au 31 mars, deux mois de décalage. Aucune expulsion de logement en location ne pourra avoir lieu avant cette date."
+    goto router
+  } else if (event == "cotisations") {
+    say Typing(2000)
+    say "À l'égard des cotisations d'entreprises, le Emmanuel Macron a annoncé :"
+    say Typing(2000)
+    say "« reporter sans justification, sans formalité, sans pénalité, le paiement des cotisations et impôts dûs en mars »"
+    say Typing(2000)
+    say "« Nous travaillerons ensuite sur les mesures de rééchelonnement »"
+    say Typing(2000)
+    say "«Nous défendrons nos entreprises de toutes tailles, l’ensemble des travailleurs et travailleuses.»"
+    goto router
+  } else goto flow choices
+	goto end

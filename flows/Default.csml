@@ -1,7 +1,6 @@
 start:
 	say OneOf([
-		"Hmmm. Je ne sais pas ce que vous essayez de me dire.",
-		"Désolé, je n'ai vraiment pas compris...",
+		"Dans ma version actuelle, je ne sais pas répondre à cela !",
 		"Ah, on ne m'a pas encore appris cela !",
 		"Je ne sais pas encore faire cela.",
 	])

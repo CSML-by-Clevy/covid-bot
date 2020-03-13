@@ -64,6 +64,12 @@ faq:
 		say "Il existe plusieurs mesures que vous pouvez adopter pour vous protéger contre le nouveau coronavirus. Commencez par vous nettoyer fréquemment les mains en utilisant un produit hydroalcoolique – comme un gel – ou à l’eau et au savon. Pour connaître les autres mesures de protection, consultez les conseils de l’OMS à l’adresse suivante :"
 		say Url("https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public", text="Organisation Mondiale de la Santé")
 	} 
+	else if (event match btn4) {
+		say Typing(2000)
+		say "✅ Oui, c’est sans danger. Les personnes qui reçoivent des colis en provenance de Chine ne risquent pas de contracter le nouveau coronavirus."
+		say Typing(2000)
+		say "D’après des analyses antérieures, nous savons que les coronavirus ne survivent pas longtemps sur des objets, tels que des lettres ou des colis."
+	} 
 	else if (event match btn5) {
 		say Typing(2000)
 		say "❌ À l’heure actuelle, rien ne prouve que les animaux de compagnie/animaux domestiques tels que les chiens ou les chats peuvent être infectés par le nouveau coronavirus."
