@@ -11,6 +11,12 @@
       "tags": []
     },
     {
+      "name": "chiffres",
+      "description": "Statistiques journalière sur le Coronavirus",
+      "commands": [],
+      "tags": []
+    },
+    {
       "name": "choices",
       "commands": [],
       "tags": []
@@ -18,6 +24,12 @@
     {
       "name": "Default",
       "description": "Default custom flow",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "dernieres_infos",
+      "description": "Dernières informations mises à jour du gouvernement",
       "commands": [],
       "tags": []
     },
@@ -38,6 +50,11 @@
       "tags": []
     },
     {
+      "name": "mesures_macron_12_03_2020",
+      "commands": [],
+      "tags": []
+    },
+    {
       "name": "symptomes",
       "commands": [],
       "tags": []
@@ -48,7 +65,54 @@
       "tags": []
     }
   ],
-  "files": [],
-  "functions": [],
+  "files": [
+    {
+      "name": "70ans.jpg",
+      "description": null
+    },
+    {
+      "name": "bored.jpg",
+      "description": null
+    },
+    {
+      "name": "bus.jpg",
+      "description": null
+    },
+    {
+      "name": "edu.jpg",
+      "description": null
+    },
+    {
+      "name": "election.png",
+      "description": null
+    },
+    {
+      "name": "infog_coronavirus_150320.jpg",
+      "description": "Chiffres sur le Coronavirus au 15 mars"
+    },
+    {
+      "name": "tax.jpg",
+      "description": null
+    },
+    {
+      "name": "winter.jpg",
+      "description": null
+    }
+  ],
+  "functions": [
+    {
+      "name": "getCovid19Stats",
+      "description": null,
+      "args": [
+        "country"
+      ],
+      "import_url": null,
+      "runtime": "nodejs10.x",
+      "handler": "index.handler",
+      "environment": {},
+      "app_id": null,
+      "version": null
+    }
+  ],
   "apps": []
 }

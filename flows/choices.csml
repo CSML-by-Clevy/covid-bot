@@ -6,7 +6,9 @@ start:
 			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "2"]) as ideesbtn,
 			Button("Quand et comment utiliser un masque ?", accept=["masque", "3"]) as masquebtn,
 			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "4"]) as pratiquesbtn,
-			Button("Les questions fréquentes", accept=["questions", "faq", "5"]) as questionsbtn
+			Button("Les questions fréquentes", accept=["questions", "faq", "5"]) as questionsbtn,
+			Button("Les chiffres en France", accept=["chiffres", "les chiffres", "6"]) as chiffresbtn,
+			Button("Dernières Informations", accept=["infos", "dernières infos", "dernières informations", "7"]) as infosbtn
 		])
 	hold
 
@@ -15,6 +17,8 @@ start:
 	if (event match masquebtn) goto flow masque
 	if (event match questionsbtn)	goto flow faq
 	if (event match pratiquesbtn) goto flow bonnesPratiques
+	if (event match chiffresbtn) goto flow chiffres
+	if (event match infosbtn) goto flow dernieres_infos
 
 	say "Je suis désolé, je n'ai pas compris votre choix..."
 	say OneOf([

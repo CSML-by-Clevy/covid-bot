@@ -1,0 +1,24 @@
+start:
+	say "Le ministre des Solidarités et de la Santé, tient un point presse quotidien pour vous informer sur l’évolution de la situation en France."
+	say Typing(3000)
+	say "**Les informations du jour :**"
+	say Typing(2000)
+	say "Le virus est présent sur le territoire national, avec notamment plusieurs zones de regroupement de cas appelés clusters."
+	say Typing(2000)
+	say "Nous sommes actuellement au **stade 3** du plan d’actions du Gouvernement qui a pour objectif de prévenir et limiter la circulation du virus."
+	say Typing(3000)
+	say "Depuis le 24 janvier 2020, la France compte **5 423** cas de Coronavirus COVID-19 confirmés."
+	say Typing(2000)
+	say "**127** personnes sont décédées depuis le début de l'épidémie."
+	say Typing(3000)
+	say "Retrouvez le point épidémiologique quotidien sur Santé publique France."
+	say Typing(5000)
+	say Image("https://www.santepubliquefrance.fr/var/site/storage/images/5/1/9/4/2494915-66-fre-FR/infog_coronavirus_150320.jpg")
+	say {
+		"content_type": "link",
+		"url": "https://www.santepubliquefrance.fr",
+		"text": "Santé publique France",
+		"title": "Santé publique France"
+	}
+	//say Url("https://www.santepubliquefrance.fr", text="Santé publique France")
+	goto end
