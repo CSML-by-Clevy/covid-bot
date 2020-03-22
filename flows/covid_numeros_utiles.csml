@@ -1,0 +1,88 @@
+start:
+
+say Typing(2000)
+say "Le ministère des Solidarités et de la Santé a activé depuis le 1er février la plateforme téléphonique d’information 'Nouveau coronavirus'."
+say Typing(3000)
+say "Cette plateforme téléphonique permet d’obtenir des informations sur le COVID-19 et des conseils si vous avez voyagé dans une zone où circule le virus ou côtoyé des personnes qui y ont circulé."
+say Typing(1000)
+goto nu
+
+nu:
+	say {
+  "meta": { "message_id":"jeprefereunestring", "sender":"bot" },
+  "content_type": "carousel",
+  "elements": [
+     {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/fa13f0fe-71da-48de-879b-1f745fbfac7b/nu_novert_w.png",
+      "title": "Plateforme d'information Coronavirus",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "novert"
+        },
+      ],
+    },     
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/0f53b9cd-b3fa-4ae9-92db-3a21f61c44a1/nu_sos_w.png",
+      "title": "Numéro d'urgence médicale",
+			"buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "sos"
+        },
+      ],
+    },    
+    {
+      "content_type": "card",
+      "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/5d3dccaf-b654-48c5-adfd-338ca0aec445/nu_etranger_w.png",
+      "title": "J'habite à l'étranger, que faire ?",
+      "buttons": [
+        {
+          "content_type": "button",
+          "title": "En savoir plus",
+          "theme": "primary",
+          "payload": "etranger"
+        },
+      ],
+    },    
+  ]
+}
+goto router
+
+router:
+	hold
+	if (event == "sos") goto nu_sos
+	else if (event == "novert") goto nu_novert
+	else if (event == "etranger") goto nu_etranger
+	else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto end
+  }
+	
+	
+nu_sos:
+  say Typing(2000)
+ 	say "En cas de fièvre, de toux et de difficultés respiratoires, veuillez consulter votre médecin, qui pourra vous orienter rapidement vers l’établissement de santé le plus adapté."
+  say Typing(2000)
+	say "Si vous avez séjourné dans une zone où circule le virus et si vous présentez des symptômes évocateurs, **contactez le SAMU en composant le 15**."
+  goto router
+
+nu_novert:
+  say Typing(2000)
+	say	"Un numéro vert répond à vos questions sur le Coronavirus COVID-19 en permanence, 24h/24 et 7j/7 : 📞 **0 800 130 000**."
+  say Typing(2000)
+	say "Attention, la plateforme téléphonique n’est pas habilitée à dispenser des conseils médicaux, si vous présentez des **signes d’infections respiratoires dans les 14 jours** suivant votre retour de Chine (Chine continentale, Hongkong, Macao), de Singapour, de Corée du Sud, d’Iran ou des régions de Lombardie et de Vénétie en Italie, il faut **contacter le 15** ou le 114 pour les personnes ayant des difficultés à parler ou entendre."
+  goto router
+
+nu_etranger:
+  say Typing(2000)
+	say "L’Ambassade et consulat de votre lieu de résidence est à votre disposition pour répondre à l’ensemble de vos questions. Par ailleurs, le ministère met à jour régulièrement son site de conseils aux voyageurs."
+  say Typing(2000)
+  say Url("https://www.diplomatie.gouv.fr/fr/le-ministere-et-son-reseau/annuaires-du-ministere-de-l-europe-et-des-affaires-etrangeres/ambassades-et-consulats-francais-a-l-etranger/", text="Ambassades et consulats français à l'étranger", title="Ambassades et consulats français à l’étranger")
+	goto router

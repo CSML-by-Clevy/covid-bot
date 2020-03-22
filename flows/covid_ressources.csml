@@ -1,0 +1,12 @@
+start:
+	say "Nous mettons à votre disposition l’ensemble des affiches et infographies explicatives produite par le Gouvernement."
+	say Typing(2000)
+	say "Elles sont libres de droit."
+	say Typing(2000)
+	say Url("https://www.gouvernement.fr/sites/default/files/contenu/piece-jointe/2020/03/coronavirus_ce_quil_faut_savoir.pdf",
+		text="Affiche Coronavirus, ce qu'il faut savoir",
+		title="ffiche Coronavirus, ce qu'il faut savoir")
+	say Url("https://www.gouvernement.fr/sites/default/files/contenu/piece-jointe/2020/03/coronavirus_gestes_barierre_spf.pdf",
+		text="Affiche Coronavirus, les gestes barrières",
+		title="Affiche Coronavirus, les gestes barrières")
+	goto end

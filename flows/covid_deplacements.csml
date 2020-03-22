@@ -1,0 +1,105 @@
+start:
+	say "🚨 **Les déplacements sont interdits** 🚨, pendant 15 jours, à compter du mardi 17 mars 2020 à midi, sauf dans certains cas et à condition d'être munis d'une attestation dérogatoire"
+	say Typing(3000)
+  say "Souhaitez-vous que nous vous générions automatiquement votre **attestation dérogatoire** 📑📲 ? "
+  say Typing(3000)
+	say "🚨 Attention 🚨Selon les dernières informations du Ministère de l'Intérieur, toute attestation ne sera valide que si elle est **imprimée** 🖨 ou **rédigée sur papier libre**. 📑 "
+	say Typing(2000)
+  say Question(buttons=[
+			Button("Générer une attestation 📑", accepts=["oui", "si", "ok", "d'accord", "yes", "ça marche","c'est parti", "C'est parti", "attestation", "générer", "generer attestation", "generer une attestation"]) as yesbtn, 
+			Button("Connaître les règles 👮‍♀️", accepts=["les règles", "règles", "info", "no", "non", "non merci", "nope", "ca ira", "ça ira"]) as nobtn,
+		]
+	)
+	hold
+
+	if (event match yesbtn) {
+    say "**Important**: Je dois vous demander certaines **informations personnelles** pour remplir l'attestation. Ces données seront utilisées **uniquement pour remplir cette attestation**, et je les **supprime chaque jour** de ma mémoire 🤖 !"
+		say Question(buttons=[
+        Button("Ok", accepts=["go l'escargot", "go", "oui", "si", "ok", "d'accord", "yes", "ça marche","c'est parti", "C'est parti"]) as gobtn, 
+        Button("Non merci", accepts=["no", "non", "non merci", "nope"]) as nogobtn,
+      ]
+    )
+    hold
+    if (event match gobtn) {
+		say "C'est parti 🔥"
+      goto name
+    }
+    else {
+      goto rappelcas
+    }
+	}
+	else {
+    goto rappelcas
+	}
+
+name:
+  say Typing(2000)
+	say "Pourriez-vous écrire votre **Nom** et **Prénom** ?"
+	hold
+	remember name = event
+	say Typing(2000)
+  say "Parfait, il me faut également votre **date de naissance** s'il vous plait (JJ/MM/AAAA)."
+	hold
+	remember birthdate = event
+	say Typing(2000)
+  say "Quelle est **l'adresse** de votre domicile actuel (adresse, CP, ville) ?"
+	hold
+	remember address = event
+	say Typing(2000)
+  say "Quelle est la raison de votre sortie ?"
+	say Button("👨‍💻 Raison professionnelle") as pro
+	say Button("🛍 Achats de première nécessité") as food
+	say Button("👩‍⚕️ Motif de santé") as health
+	say Button("👨‍👩‍👧‍👦 Aide aux proches") as help
+	say Button("⛹️‍♂️ Courte sortie (sport, animal, ...)") as quick
+	hold
+	if (event match pro) remember reason = "job"
+	else if (event match food) remember reason = "food"
+	else if (event match health) remember reason = "health"
+	else if (event match help) remember reason = "help"
+	else if (event match quick) remember reason = "quick"
+	else remember reason = "other"
+	say "Parfait, et enfin dans quelle **ville** vous trouvez-vous en ce moment ?"
+	hold
+	remember location = event
+	say Typing(2000)
+  say "Ok, donnez-moi quelques secondes pour préparer le document..."
+	do Fn(
+		"covid_deplacements_pdf_form",
+		name=name,
+		birthdate=birthdate,
+		address=address,
+		reason=reason,
+		location=location,
+		sigSize=45,
+		sigX=300) as filledPdf
+	say "C'est bon ✅, j'ai généré votre dérogation 😊 !
+	👉  **[afficher mon attestation]({{filledPdf}})**"
+	//say "C'est bon ✅, j'ai généré votre dérogation 😊 !"
+	//say Url(url=filledPdf, text="Attestation de déplacement dérogatoire")
+  
+  goto rappelcas
+  
+  rappelcas:
+  say Typing(2000)
+	say "Attention, pour rappel, seules les sorties dans les cas suivants sont autorisées, sous peine **d'amende** 👮‍♀️"
+  say Typing(3000)
+  say "- 👨‍💻 Se déplacer de son domicile à son lieu de travail dès lors que le télétravail n’est pas possible.
+	- 🛍 Faire ses achats de première nécessité dans les commerces de proximité autorisés.
+	- 👩‍⚕️ Se rendre auprès d’un professionnel de santé.
+	- 👶 Se déplacer pour la garde de ses enfants ou pour aider les personnes vulnérables à la stricte condition de respecter les gestes barrières.
+	- ⛹️‍♂️ Faire de l’exercice physique uniquement à titre individuel, autour du domicile et sans aucun rassemblement."
+	say Typing(4000)
+	say "Les infractions à ces règles sont sanctionnées d’une amende de **135 €** et qui pourra être portée à **375 €**."
+	say Typing(3000)
+	say "🚨 Attention 🚨Selon les dernières informations du gouvernement, toutte atestation pour être valide doit être imprimée 🖨 ou rédigée sur papier libre.📑 "
+	say Typing(3000)
+	say "Vous pouvez également télécharger les modèles d'attestation vierges en cliquant ci-dessous "
+	say Typing(3000)
+	say Url("https://www.interieur.gouv.fr/content/download/121684/977026/file/attestation_de_deplacement_derogatoire.pdf",
+		text="Attestation de déplacement dérogatoire",
+		title="Attestation de déplacement dérogatoire")
+	say Url("https://www.interieur.gouv.fr/content/download/121685/977031/file/justificatif_de_deplacement_professionnel.pdf",
+		text="Justificatif de déplacement Professionnel",
+		title="Justificatif de déplacement Professionnel")
+	goto end

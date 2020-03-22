@@ -2,7 +2,7 @@
 
 Bot d'information sur le coronavirus réalisé avec le langage open-source CSML - https://www.csml.dev.
 
-Visitez https://covid19.clevy.io pour l'essayer !  
+Visitez https://covidbot.clevy.io pour l'essayer !  
 Version Facebook Messenger et Workplace Chat sur https://www.messenger.com/t/covid19infofrance (code source: https://github.com/CSML-by-Clevy/covid-bot-messenger)
 
 ## Installation
@@ -21,4 +21,5 @@ Si vous souhaitez être assistés dans la modification de ce bot pour vos propre
 
 ## IMPORTANT
 
-Si vous présentez des symptômes du COVID-19, appelez le SAMU (15). Ce bot ne constitue pas un avis médical.
+Ce bot ne constitue pas un avis médical.
+Si vous présentez des symptomes, un numéro vert répond à vos questions sur le Coronavirus COVID-19 en permanence, 24h/24 et 7j/7 : 0 800 130 000.

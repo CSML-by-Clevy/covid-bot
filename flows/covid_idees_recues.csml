@@ -1,0 +1,209 @@
+start:
+  say Typing(1000)
+	say "Faisons ensemble un **petit quizz**  pour aborder les **idées reçues et les fake news** publiées sur les réseaux sociaux ces derniers jours."
+	say Typing(2000)
+  remember score = 0
+	goto btn0
+
+			
+btn0:
+  say "**Question 1/7**"
+	say "**Le coronavirus peut être transmis par les piqûres de moustiques** 🦟"
+  use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn0
+  }
+	say Typing(2000)
+	say "❌ **Le nouveau coronavirus NE peut PAS être transmis par les piqûres de moustiques**."
+	say Typing(3000)
+	say "Le nouveau coronavirus est un virus respiratoire qui se propage essentiellement par contact avec une personne infectée, par l'intermédiaire des gouttelettes respiratoires émises lorsqu'une personne, par exemple, tousse ou éternue, ou par l'intermédiaire des gouttelettes de salive ou de sécrétions nasales."
+	say Typing(2000)
+	say "À ce jour, il n'existe aucune information ni aucun élément de preuve laissant penser que le 2019-nCov pourrait être transmis par les moustiques."
+	say Typing(2000)
+	say "✅ Pour vous protéger, évitez tout contact rapproché avec une personne qui a de la fièvre ou qui tousse, et pratiquez les bons gestes d'hygiène des mains et d'hygiène respiratoire."
+  goto btn1
+
+btn1:
+  say "**Question 2/7**"
+	say "**L'urine des enfants peut protéger contre le coronavirus** 👶🧒"
+  use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn1
+  }
+  say Typing(2000)
+  say "❌ **L'urine des enfants NE peut PAS protéger contre le nouveau coronavirus.**"
+  say Typing(2000)
+  say "L'urine ne tue pas les virus et les bactéries."
+  say Typing(2000)
+  say "En fait, l'urine peut contenir des petites quantités de matériel viral ou bactérien."
+  say Typing(2000)
+  say "Vous laver les mains avec l'urine d'un enfant ou utiliser cette urine pour frotter les surfaces ne vous protègera pas contre le nouveau coronavirus (2019-nCoV)."
+  say Typing(2000)
+  say "✅ Nettoyez-vous souvent les mains avec un produit hydroalcoolique ou à l'eau et au savon. Nettoyez les surfaces avec de simples désinfectants ménagers."
+  goto btn2
+
+btn2:
+  say "**Question 3/7**"
+  say "**Le temps froid et la neige peuvent tuer le coronavirus** 🌨️"
+  use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn2
+  }
+  say Typing(2000)
+  say "❌ **Le temps froid et la neige NE peuvent PAS tuer le nouveau coronavirus (2019-nCoV).**"		
+  say Typing(2000)
+  say "La température normale du corps humain reste aux alentours de 36,5 °C et 37 °C, quel que soit la température ou le temps extérieur."
+  say Typing(2000)
+  say "Par conséquent, il n'y a aucune raison de croire que le temps froid peut tuer le nouveau coronavirus ou d'autres agents pathogènes."
+  say Typing(2000)
+  say "✅ Le moyen le plus efficace pour vous protéger contre le 2019-nCoV est de vous nettoyer fréquemment les mains avec un produit hydroalcoolique ou à l'eau et au savon."
+	goto btn3
+
+btn3:
+  say "**Question 4/7**"
+  say "**La cocaïne peut protéger contre le coronavirus** 🦠"
+  use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn3
+  }
+  say Typing(2000)
+  say "❌ **La cocaïne NE protège PAS contre le nouveau coronavirus et peut être dangereuse.**"
+  say Typing(2000)
+  say "La cocaïne est une drogue stimulante addictive."
+  say Typing(2000)
+  say "Son usage provoque de graves effets indésirables et est nocif pour la santé des personnes."
+  say Typing(2000)
+  say "✅ Nettoyez-vous souvent les mains avec un produit hydroalcoolique ou à l'eau et au savon. Nettoyez les surfaces avec de simples désinfectants ménagers."
+  goto btn4
+
+btn4:
+  say "**Question 5/7**"
+  say "**Le coronavirus peut être transmis par des objets, tels que les pièces et les billets de banque** 💶"
+	use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn4
+  }
+  say Typing(2000)
+  say "❌ **Le risque d'être infecté par le nouveau coronavirus (2019-nCoV) en touchant des objets**, notamment des pièces de monnaie, des billets de banque ou des cartes de crédit, est très faible."
+  say Typing(2000)
+  say "Des données préliminaires indiquent que le nouveau coronavirus (2019-nCoV) peut survivre sur des surfaces pendant quelques heures ou plus."
+  say Typing(2000)
+  say "Il peut arriver qu'un objet soit contaminé par le 2019-nCoV par une personne infectée qui tousse ou éternue ou qui touche l'objet."
+  say Typing(2000)
+  say "Avec une bonne hygiène des mains, le risque d'être infecté par le nouveau coronavirus (2019-nCoV) en touchant des objets, notamment des pièces de monnaie, des billets de banque ou des cartes de crédit, est très faible."
+  say Typing(2000)
+  say "✅ La meilleure protection consiste à se nettoyer fréquemment les mains avec un produit hydroalcoolique ou à l'eau et au savon."
+  goto btn5
+
+btn5:
+  say "**Question 6/7**"
+  say "**Le coronavirus peut se projeter jusqu'à 8 mètres d'une personne qui tousse ou éternue**"
+  use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn5
+  }
+  say Typing(2000)
+  say "❌ **Les gouttelettes respiratoires se projettent à 1 mètre au maximum d'une personne qui tousse ou éternue.**"		
+  say Typing(2000)
+  say "Lorsqu'une personne infectée par le 2019-nCoV tousse ou éternue, le virus est expulsé dans les gouttelettes qui peuvent parcourir une certaine distance à partir de cette personne."
+  say Typing(2000)
+  say "✅ Par conséquent, pour vous protéger de n'importe quel virus respiratoire, évitez tout contact rapproché avec une personne qui a de la fièvre ou qui tousse, et nettoyez-vous fréquemment les mains avec un produit hydroalcoolique ou à l'eau et au savon."
+	goto btn6
+
+btn6:
+  say "**Question 7/7**"
+  say "**Le coronavirus peut se propager sur de longues distances dans l'air** ⛅"
+	use Button("👍 Vrai", accepts=["vrai", "Vrai", "Juste", "Ok", "OK", "Oui", "Ouais", "Yes", "juste", "ok", "oui", "yes", "ouais", "y", "1"]) as btnyes
+  use Button("👎 Faux", accepts=["faux", "Faux", "Non", "No", "nan", "Nan", "Nope", "non", "no", "nope", "noo", "2"]) as btnno
+  say btnyes
+  say btnno
+  hold
+  if (event match btnno) {
+    say OneOf(["😎 Tout juste!", "🤓 Bien joué !", "🌟 Bravo !"])
+    remember score = score + 1
+  } else if (event match btnyes) {
+    say OneOf(["😊 Presque !", "😱 Pas vraiment..."])
+  } else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto btn6
+  }
+  say Typing(2000)
+  say "❌ **Les coronavirus sont des virus qui NE se propagent PAS sur de longues distances dans l'air.** "		
+  say Typing(2000)
+  say "Le nouveau coronavirus (2019-nCoV) est un virus respiratoire qui se propage essentiellement par l'intermédiaire des gouttelettes émises lorsqu'une personne infectée tousse ou éternue, ou par l'intermédiaire des gouttelettes de salive ou de sécrétions nasales. Ces gouttelettes sont trop lourdes pour voyager loin."
+  say Typing(2000)
+  say "Une infection pourrait également se déclarer si vous vous touchez les yeux, la bouche, ou le nez après avoir été en contact avec une surface contaminée."
+  say Typing(2000)
+  say "✅ Protégez-vous en vous nettoyant les mains fréquemment avec un produit hydroalcoolique ou à l'eau et au savon."
+	goto score
+
+score:
+  say Typing(2000)
+  if (score == 0 || score == 1 || score == 2) {
+    say "**Vous avez eu {{score}} réponses justes, au moins vous avez appris plein de choses !**"
+  } else if (score == 3 || score == 4 || score == 5) {
+    say "**C'est pas mal du tout, vous avez bien répondu à {{score}} questions !**"
+  } else if (score > 5) {
+    say "**Bien joué, c'est un sans faute avec un score de 6/6 !**"
+  }
+  goto end

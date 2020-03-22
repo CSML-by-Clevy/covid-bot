@@ -1,8 +1,3 @@
 start:
-	say OneOf([
-		"Dans ma version actuelle, je ne sais pas répondre à cela !",
-		"Ah, on ne m'a pas encore appris cela !",
-		"Je ne sais pas encore faire cela.",
-	])
-	say "Revenons plutôt au début pour vous guider !"
-	goto flow choices
+	say "Hello"
+	goto end

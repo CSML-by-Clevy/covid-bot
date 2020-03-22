@@ -1,23 +1,51 @@
 {
-  "id": "1803d16e-d6d7-46cc-9294-c64488eb97a6",
-  "name": "CoronaVirus",
-  "description": null,
+  "id": "d79a63b6-b3b5-454a-a631-49329d57d79b",
+  "name": "opensourcecovidbot_20_03_2020",
   "default_flow": "Default",
   "tags": [],
   "flows": [
     {
-      "name": "bonnesPratiques",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "chiffres",
-      "description": "Statistiques journalière sur le Coronavirus",
-      "commands": [],
-      "tags": []
-    },
-    {
       "name": "choices",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_bonnes_pratiques",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_deplacements",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_gouvernement",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_idees_recues",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_les_chiffres",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_numeros_utiles",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_ressources",
+      "commands": [],
+      "tags": []
+    },
+    {
+      "name": "covid_utiliser_masque",
       "commands": [],
       "tags": []
     },
@@ -28,88 +56,68 @@
       "tags": []
     },
     {
-      "name": "dernieres_infos",
-      "description": "Dernières informations mises à jour du gouvernement",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "faq",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "ideesRecues",
-      "description": null,
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "masque",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "mesures_macron_12_03_2020",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "symptomes",
-      "commands": [],
-      "tags": []
-    },
-    {
-      "name": "welcome",
+      "name": "TEST_covid_deplacements",
       "commands": [],
       "tags": []
     }
   ],
-  "files": [
-    {
-      "name": "70ans.jpg",
-      "description": null
-    },
-    {
-      "name": "bored.jpg",
-      "description": null
-    },
-    {
-      "name": "bus.jpg",
-      "description": null
-    },
-    {
-      "name": "edu.jpg",
-      "description": null
-    },
-    {
-      "name": "election.png",
-      "description": null
-    },
-    {
-      "name": "infog_coronavirus_150320.jpg",
-      "description": "Chiffres sur le Coronavirus au 15 mars"
-    },
-    {
-      "name": "tax.jpg",
-      "description": null
-    },
-    {
-      "name": "winter.jpg",
-      "description": null
-    }
-  ],
+  "files": [],
   "functions": [
     {
-      "name": "getCovid19Stats",
+      "name": "covid_bonnes_pratiques_utils",
       "description": null,
-      "args": [
-        "country"
-      ],
+      "args": [],
+      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_bonnes_pratiques_utils.zip",
+      "runtime": "nodejs10.x",
+      "handler": "index.handler",
+      "app_id": null,
+      "version": null
+    },
+    {
+      "name": "covid_deplacements_pdf_form",
+      "description": null,
+      "args": [],
       "import_url": null,
       "runtime": "nodejs10.x",
       "handler": "index.handler",
-      "environment": {},
+      "environment": {
+        "BB_AWS_SECRET_ACCESS_KEY": "",
+        "BB_AWS_ACCESS_KEY_ID": ""
+      },
+      "app_id": null,
+      "version": null
+    },
+    {
+      "name": "covid_deplacements_pdf_form_2",
+      "description": null,
+      "args": [],
+      "import_url": null,
+      "runtime": "nodejs10.x",
+      "handler": "index.handler",
+      "environment": {
+        "BB_AWS_SECRET_ACCESS_KEY": "",
+        "BB_AWS_ACCESS_KEY_ID": ""
+      },
+      "app_id": null,
+      "version": null
+    },
+    {
+      "name": "covid_numeros_utiles_utils",
+      "description": null,
+      "args": [],
+      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_numeros_utiles_utils.zip",
+      "runtime": "nodejs10.x",
+      "handler": "index.handler",
+      "app_id": null,
+      "version": null
+    },
+    {
+      "name": "covid_ressources_utils",
+      "description": null,
+      "args": [],
+      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_ressources_utils.zip",
+      "runtime": "nodejs10.x",
+      "handler": "index.handler",
       "app_id": null,
       "version": null
     }

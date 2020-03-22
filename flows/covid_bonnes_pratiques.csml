@@ -1,0 +1,128 @@
+start:
+say Typing(2000)
+say "**Prenez soin de votre santé et protégez les autres en suivant les conseils ci-après :**"
+say Typing(3000)
+goto bp
+
+bp:
+    say {
+    "meta": { "message_id":"jeprefereunestring", "sender":"bot" },
+    "content_type": "carousel",
+    "elements": [
+      {
+        "content_type": "card",
+        "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/8f343206-d50e-4acf-a978-57fe9513927e/bp_lavagemains_w.png",
+        "subtitle": "Se laver fréquemment les mains",
+        "buttons": [
+          {
+            "content_type": "button",
+            "title": "En savoir plus",
+            "theme": "primary",
+            "icon": "info",
+            "payload": "lavagemains"
+          },
+        ],
+      },    
+      {
+        "content_type": "card",
+        "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/ac09b28e-cc5f-493a-af81-ae1fa8f3df03/bp_evitergroupes_w.png",
+        "subtitle": "Éviter les contacts proches",
+        "buttons": [
+          {
+            "content_type": "button",
+            "title": "En savoir plus",
+            "theme": "primary",
+            "icon": "info",
+            "payload": "contactproche"
+          },
+        ],
+      },    
+      {
+        "content_type": "card",
+        "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/b348a02a-642a-490d-b279-8f76ce5c0f1e/bp_evitercontact_w.png",
+        "subtitle": "Éviter de se toucher les yeux, le nez et la bouche",
+        "buttons": [
+          {
+            "content_type": "button",
+            "title": "En savoir plus",
+            "theme": "primary",
+            "icon": "info",
+            "payload": "contact"
+          },
+        ],
+      },    
+      {
+        "content_type": "card",
+        "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/178794d7-beab-489f-8780-68266a52a8dd/bp_regleshygienes_w.png",
+        "subtitle": "Respecter les règles d’hygiène respiratoire",
+        "buttons": [
+          {
+            "content_type": "button",
+            "title": "En savoir plus",
+            "theme": "primary",
+            "icon": "info",
+            "payload": "hygiene"
+          },
+        ],
+      },    
+      {
+        "content_type": "card",
+        "image_url": "https://cdn.csml.dev/customers/0833ea07-0f4a-4086-8409-d14c4b49bdf3/files/67270127-fd9f-451b-ad0b-3e4cb3fd5832/bp_suivreinfos_w.png",
+        "subtitle": "S'informer et suivre les conseils de son médecin",
+        "buttons": [
+          {
+            "content_type": "button",
+            "title": "En savoir plus",
+            "theme": "primary",
+            "icon": "info",
+            "payload": "info"
+          },
+        ],
+      },  
+    ]
+  }
+  goto router
+
+router:
+  hold
+  if (event == "lavagemains") goto bp_lavagemains
+  else if (event == "contactproche") goto bp_evitergroup
+  else if (event == "contact") goto bp_evitercontact
+  else if (event == "hygiene") goto bp_regleshygienes
+  else if (event == "info") goto bp_resterinforme
+  else {
+    say "Pour poser une questions sur le coronavirus, vous pouvez cliquer sur le raccourci **''Poser une question''** dans le menu 🙂"
+    goto end
+  }
+        
+bp_lavagemains:
+  say "Se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon tue le virus s’il est présent sur vos mains."
+  say Video("https://www.dailymotion.com/embed/video/x7smbcg")
+  goto router
+
+bp_evitergroup:
+  say Typing(2000)
+  say "Maintenir une distance d’au moins 1 mètre avec les autres personnes, en particulier si elles toussent, éternuent ou ont de la fièvre."
+  say Typing(2000)
+  say "Lorsqu’une personne infectée par un virus respiratoire, comme la COVID-19, tousse ou éternue, elle projette de petites gouttelettes contenant le virus. Si vous êtes trop près, vous pouvez inhaler le virus."
+  goto router
+
+bp_evitercontact:
+  say "Les mains sont en contact avec de nombreuses surfaces qui peuvent être contaminées par le virus. Si vous vous touchez les yeux, le nez ou la bouche, vous risquez d’être en contact avec le virus présent sur ces surfaces."
+  goto router
+
+bp_regleshygienes:
+  say Typing(2000)
+  say     "Tousser ou éternuer dans le pli du coude ou avec un mouchoir en cas de toux ou d’éternuement – jeter le mouchoir immédiatement après dans une poubelle fermée et se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon."
+  say Typing(2000)
+  say "Se couvrir la bouche et le nez en cas de toux ou d’éternuement permet d’éviter la propagation des virus et autres agents pathogènes."
+  goto router
+
+bp_resterinforme:
+  say Typing(2000)
+  say "Tenez-vous au courant des dernières évolutions concernant la COVID-19. Suivez les conseils de votre médecin, des autorités de santé nationales et locales ou de votre employeur pour savoir comment vous protéger et protéger les autres de la COVID-19."
+  say Typing(2000)
+  say "Ce sont les autorités nationales et locales qui disposent des informations les plus récentes sur la propagation ou non de la COVID-19 dans la région où vous vous trouvez. Elles sont les mieux placées pour expliquer ce que les personnes dans votre région devraient faire pour se protéger."
+goto router
+
+

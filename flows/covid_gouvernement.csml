@@ -1,0 +1,16 @@
+start:
+	say Typing(2000)
+	say "Depuis le début de l’épidémie de Coronavirus COVID-19 en Chine en décembre 2019, le Gouvernement est pleinement engagé pour faire face à la situation et vous protéger."
+	say Typing(3000)
+	say "Les décisions prises par le Gouvernement s’appuient sur le fondement de faits étayés scientifiquement et sur les **connaissances des modalités de propagations du virus**, afin de vous fournir les **informations et les recommandations les plus précises** pour lutter contre le risque d’épidémie."
+	say Typing(3000)
+	say "Cliquez sur un lien ci-dessous pour en savoir plus."
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n1", text="Pour votre santé")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n2", text="Pour vos voyages")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n3", text="Pour vos déplacements")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n4", text="Pour la scolarité de vos enfants")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n5", text="Pour l'économie")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n7", text="Pour la tenue des élections municipales")
+	say Url("https://www.gouvernement.fr/info-coronavirus#partie7n6", text="Chronologie")
+
+	goto end

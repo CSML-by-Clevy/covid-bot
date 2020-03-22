@@ -1,0 +1,48 @@
+start:
+	say Typing(2000)
+	say "Le port du masque chirurgical n’est pas recommandé sans présence de symptômes. 😷"
+	say Typing(2000)
+	say "❗ Le masque **n’est pas la bonne réponse pour le grand public** car il ne peut être porté en permanence et surtout **n’a pas d’indication sans contact rapproché et prolongé avec un malade**."
+	say Typing(2000)
+	say "Le masque est donc **réservé aux malades sur prescription médicale**, aux contacts avérés haut risque, aux professionnels du secours à personnes, du transport sanitaire, des professions de santé, en ville comme à l’hôpital."
+	say Typing(2000)
+	say "Les pharmacies d’officine ont reçu ce message et délivreront des masques **uniquement aux personnes ayant une indication**. Comme pour l’épisode de grippe saisonnière, les **gestes barrières** sont efficaces."
+	goto masque
+
+masque:
+	say Question(
+		"Voulez-vous que nous voyons ensemble **comment mettre, utiliser, enlever et éliminer un masque** ?",
+		buttons=[
+			Button("Oui", accepts=["oui", "si", "ok", "d'accord", "yes"]) as yesbtn, 
+			Button("Non", accepts=["no", "non", "nope"]) as nobtn,
+		]
+	)
+	hold
+
+	if (event match yesbtn) {
+		say Typing(2000)
+		say "1️⃣ Avant de mettre un masque, se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon."
+		say Typing(2000)
+		say "2️⃣ Appliquer le masque de façon à recouvrir le nez et la bouche et veillez à l’ajuster au mieux sur votre visage."
+		say Typing(2000)
+		say "3️⃣ Lorsque l’on porte un masque, éviter de le toucher; chaque fois que l’on touche un masque usagé, se laver les mains à l’aide d’une solution hydroalcoolique ou à l’eau et au savon."
+		say Typing(2000)
+		say "4️⃣ Lorsqu’il s’humidifie, le remplacer par un nouveau masque et ne pas réutiliser des masques à usage unique."
+		say Typing(2000)
+		say "5️⃣ Pour retirer le masque :  
+		 - l’enlever par derrière (ne pas toucher le devant du masque); 
+		 - le jeter immédiatement dans une poubelle fermée;
+		 - se laver les mains avec une solution hydroalcoolique ou à l’eau et au savon"
+		say Video("https://youtu.be/KuT1KNfJIjc")
+		say Typing(2000)
+		say "Source :"
+		say Url("https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks",
+			text="Organisation Mondiale de la Santé - Quand et comment utiliser un masque ?",
+			title="Organisation Mondiale de la Santé - Quand et comment utiliser un masque ?")
+	}
+	else {
+		say "C'est noté 😀
+		Avez-vous des questions ?"
+	}
+		
+	goto end

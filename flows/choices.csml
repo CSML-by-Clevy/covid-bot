@@ -2,28 +2,30 @@ start:
 	say Question(
 		"Quel type d'informations aimeriez-vous recevoir ?",
 		buttons=[
-			Button("Allocution du Président du 12 mars", accept=["macron", "discours", "le discours", "1"]) as discoursbtn,
-			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "2"]) as ideesbtn,
-			Button("Quand et comment utiliser un masque ?", accept=["masque", "3"]) as masquebtn,
-			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "4"]) as pratiquesbtn,
-			Button("Les questions fréquentes", accept=["questions", "faq", "5"]) as questionsbtn,
-			Button("Les chiffres en France", accept=["chiffres", "les chiffres", "6"]) as chiffresbtn,
-			Button("Dernières Informations", accept=["infos", "dernières infos", "dernières informations", "7"]) as infosbtn
+			Button("Attestation de déplacement", accept=["attestation", "deplacement", "Attestation", "1"]) as depbtn,
+			Button("Les initiatives du gouvernement", accept=["macron", "discours", "le discours", "le gouvernement", "2"]) as discoursbtn,
+			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "3"]) as ideesbtn,
+			Button("Quand et comment utiliser un masque ?", accept=["masque", "4"]) as masquebtn,
+			Button("Les bonnes pratiques du quotidien", accept=["bonnes pratiques", "pratiques", "5"]) as pratiquesbtn,
+			Button("Les chiffres", accept=["chiffres", "les chiffres", "6"]) as chiffresbtn,
+			Button("Les numéros utiles", accept=["les numeros", "numeros", "7"]) as numerosbtn,
+			Button("Les ressources", accept=["les ressources", "ressources", "8"]) as ressourcesbtn
 		])
 	hold
 
-	if (event match discoursbtn) goto flow mesures_macron_12_03_2020
-	if (event match ideesbtn) goto flow ideesRecues
-	if (event match masquebtn) goto flow masque
-	if (event match questionsbtn)	goto flow faq
-	if (event match pratiquesbtn) goto flow bonnesPratiques
-	if (event match chiffresbtn) goto flow chiffres
-	if (event match infosbtn) goto flow dernieres_infos
+	if (event match depbtn) goto flow covid_deplacements
+	else if (event match discoursbtn) goto flow covid_gouvernement
+	else if (event match ideesbtn) goto flow covid_idees_recues
+	else if (event match masquebtn) goto flow covid_utiliser_masque
+	else if (event match pratiquesbtn) goto flow covid_bonnes_pratiques
+	else if (event match chiffresbtn) goto flow covid_bonnes_pratiques
+	else if (event match numerosbtn) goto flow covid_numeros_utiles
+	else if (event match ressourcesbtn) goto flow covid_ressources
 
 	say "Je suis désolé, je n'ai pas compris votre choix..."
 	say OneOf([
 		"Vous devez cliquer sur un des boutons !",
 		"Pouvez-vous utiliser les boutons s'il vous plait ?"
 	])
-	
+
 	goto start
