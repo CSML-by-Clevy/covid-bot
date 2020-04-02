@@ -2,7 +2,6 @@ start:
 	say Question(
 		"Quel type d'informations aimeriez-vous recevoir ?",
 		buttons=[
-			Button("Attestation de déplacement", accept=["attestation", "deplacement", "Attestation", "1"]) as depbtn,
 			Button("Les initiatives du gouvernement", accept=["macron", "discours", "le discours", "le gouvernement", "2"]) as discoursbtn,
 			Button("Les idées reçues", accept=["fake news", "idées", "idees", "idées reçues", "3"]) as ideesbtn,
 			Button("Quand et comment utiliser un masque ?", accept=["masque", "4"]) as masquebtn,
@@ -13,12 +12,11 @@ start:
 		])
 	hold
 
-	if (event match depbtn) goto flow covid_deplacements
-	else if (event match discoursbtn) goto flow covid_gouvernement
+	if (event match discoursbtn) goto flow covid_gouvernement
 	else if (event match ideesbtn) goto flow covid_idees_recues
 	else if (event match masquebtn) goto flow covid_utiliser_masque
 	else if (event match pratiquesbtn) goto flow covid_bonnes_pratiques
-	else if (event match chiffresbtn) goto flow covid_bonnes_pratiques
+	else if (event match chiffresbtn) goto flow covid_les_chiffres
 	else if (event match numerosbtn) goto flow covid_numeros_utiles
 	else if (event match ressourcesbtn) goto flow covid_ressources
 
