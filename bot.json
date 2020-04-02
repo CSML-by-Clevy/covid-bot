@@ -15,11 +15,6 @@
       "tags": []
     },
     {
-      "name": "covid_deplacements",
-      "commands": [],
-      "tags": []
-    },
-    {
       "name": "covid_gouvernement",
       "commands": [],
       "tags": []
@@ -54,73 +49,9 @@
       "description": "Default custom flow",
       "commands": [],
       "tags": []
-    },
-    {
-      "name": "TEST_covid_deplacements",
-      "commands": [],
-      "tags": []
     }
   ],
   "files": [],
-  "functions": [
-    {
-      "name": "covid_bonnes_pratiques_utils",
-      "description": null,
-      "args": [],
-      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_bonnes_pratiques_utils.zip",
-      "runtime": "nodejs10.x",
-      "handler": "index.handler",
-      "app_id": null,
-      "version": null
-    },
-    {
-      "name": "covid_deplacements_pdf_form",
-      "description": null,
-      "args": [],
-      "import_url": null,
-      "runtime": "nodejs10.x",
-      "handler": "index.handler",
-      "environment": {
-        "BB_AWS_SECRET_ACCESS_KEY": "",
-        "BB_AWS_ACCESS_KEY_ID": ""
-      },
-      "app_id": null,
-      "version": null
-    },
-    {
-      "name": "covid_deplacements_pdf_form_2",
-      "description": null,
-      "args": [],
-      "import_url": null,
-      "runtime": "nodejs10.x",
-      "handler": "index.handler",
-      "environment": {
-        "BB_AWS_SECRET_ACCESS_KEY": "",
-        "BB_AWS_ACCESS_KEY_ID": ""
-      },
-      "app_id": null,
-      "version": null
-    },
-    {
-      "name": "covid_numeros_utiles_utils",
-      "description": null,
-      "args": [],
-      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_numeros_utiles_utils.zip",
-      "runtime": "nodejs10.x",
-      "handler": "index.handler",
-      "app_id": null,
-      "version": null
-    },
-    {
-      "name": "covid_ressources_utils",
-      "description": null,
-      "args": [],
-      "import_url": "https://clevy-dev-covid-apps.s3.eu-west-3.amazonaws.com/functions/covid_ressources_utils.zip",
-      "runtime": "nodejs10.x",
-      "handler": "index.handler",
-      "app_id": null,
-      "version": null
-    }
-  ],
+  "functions": [],
   "apps": []
 }
